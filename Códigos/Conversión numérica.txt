@@ -1,0 +1,76 @@
+num = int(input("Ingrese el número que desea convertir:\n"))
+
+binario = ""
+
+if num == 0:
+    binario = "0"
+
+while num > 0:
+    residuo = num % 2
+    binario = str(residuo) + binario
+    num = num // 2
+
+print(binario)
+
+
+
+OCTAL
+
+
+num = int(input("Ingrese el número que desea convertir:\n"))
+
+binario = ""
+
+if num == 0:
+    binario = "0"
+
+while num > 0:
+    residuo = num % 8
+    binario = str(residuo) + binario
+    num = num // 8
+
+print(binario)
+
+
+HEXADECIMAL
+
+num = int(input("Ingrese el número que desea convertir:\n"))
+
+binario = ""
+
+if num == 0:
+    binario = "0"
+
+while num > 0:
+    residuo = num % 16
+    num = num // 16
+    if residuo == 10:
+        residuo = "A"
+    elif residuo == 11:
+        residuo = "B"
+    elif residuo == 12:
+        residuo = "C"
+    elif residuo == 13:
+        residuo = "D"
+    elif residuo == 14:
+        residuo = "E"
+    elif residuo == 15:
+        residuo = "F"
+    binario = str(residuo) + binario
+
+print(binario)
+
+
+
+BINARIO A DECIMAL
+
+num = int(input("ingrese el número binario:\n"))
+i = 0
+decimal = 0
+posicion = 0
+while num > 0:
+   digito = num % 10
+   decimal += digito * (2**posicion)
+   num = num // 10
+   posicion += 1
+print (decimal)
