@@ -1,1 +1,28 @@
-https://viewer.diagrams.net/?tags=%7B%7D&highlight=0000ff&edit=_blank&layers=1&nav=1&title=h.drawio#R3Vtdk5s2FP0tffBMmxlnAGHMPu6X0%2B0kk83stE36sqMY2agDliOE186vrwSS%2BRC25a3XgF886CIhdHTuvUdCHoDbeP2BwmX4iQQoGjhWsB6Au4HjjF2P%2FwrDJje47jg3zCkOcpNdGJ7wTySNlrSmOEBJpSIjJGJ4WTVOyWKBpqxig5SSl2q1GYmqvS7hHGmGpymMdOvfOGBhbvWdcWH%2FHeF5qHq2vav8TgxVZTmSJIQBeSmZwP0A3FJCWH4Vr29RJLBTuOTtJjvubl%2BMogUzaRA9f7xn4z8e%2F%2FnM%2Fvw8po8hW4GhLadnBaNUjli%2BLdsoCFDAEZFFQllI5mQBo%2FvCekNJugiQ6MfipaLOR0KW3Ghz47%2BIsY2cXpgywk0hiyN5Vx%2BLHF5CUjpF%2BwYgOQHpHLE99eSwxFhKHUikPiASI0Y3vAJFEWR4VZ19KEk039YrcOYXEupjYNdQf1jgKSY69lHEmS4wfgkxQ09LmKHxwn2tiiBMljn9Z3gtZmI3pCtEGVrvBUHdVdRVviuLLyVHkKaw5APKdnLUrjTU%2FuoZWYEhW%2F1usXXc8yDhGMKu5qcjuDsa7F%2FSwS0YXF%2BJhIoSBIXn8YhAB2Dy648UZde%2FDRwv4qO8%2BU751VxcJWksqmbP4M7p%2FUhF0uGA3pQL9VYUJayp2XBfowCvcILFW96ARWOfk33N41Sk9ghP4XTPQ96VH1EjIk%2BzS3HJeQKjCEVkTmHMKy4RxXxaBFbVe4%2FFjUNBNoutkp97GWkeY71qiLU9PcY6VkOQ3cbm03u7npx6FmZ9U3e3uuXuOvCTywTeMQVeOsnQeg%2FGo7yN8VzIpz0SzIdRVCGzWcJfrj5Z205fP3%2B%2BNn14xssqLss4tj8G12abhiT%2BniaHI9MJIpFfE3sNam8bnc4i92xd7%2FXLHVR8ORyIOqb3LA34h8WcywHEjYssLV%2FHiBLRt8CBqwuqp3K8bcKfQ2gmWTK29Txjd89RXF0o9ixxGC%2BMXPvozOH7I%2Fc1qeOaUrgpVViKRJI0ZBbZlVvjBfBq%2BzEH6tuKSAUV8lc4eyJTs1HiE3ezSHhvTBJGIX3mns2VOgxEDPhFy2mi3MWcBpzWXXXcM8c8eWZqdga7tg7yrNoM5JFBtnoDyuvijVP8eYY5zBm3c1I3ZK%2B3JzGwqtiMxg0sdhpY7L0Vix09QPRsieiYSjOlOTsizRx9K65nqd4cee%2FoVN%2F5JaKjK2uDNeKwm9nU89vOps5Ig7NnzuCYOoPbrTCkrzgedi736gtDsZbL3jRhYt14WavB9p3C9XvmAyentpnE9N3zSkw1zh0Sc9gdgenbrQvM3n%2FqVerlcGTv1t4f0KV93wSmKfLAVNr3SWDq53mMPkJMuikx%2FdazKdA%2FyvXMHUw%2FyoGOfQ3Vd2SOlpjiMEKAL05jtu8V7lW%2FnOD03DbTmLZ1ZpEJ9A2G6j7mpDsy07Za15lA30Domc5UIuZweO%2FWDgLQFX7PdKY58qYKv6Qzgf8qqXnsN0stXmmHyI9s0N5HSzUdxynffScJW9S9ttV6igd9P%2FSrAt5h%2FzT90HCmyKjvEx0tfItjtBcnfjvgGiNLA7XbnnBygpsmh3OrX333o6x%2B33VI%2Bzqta1%2B3FRajNWZfZXNx%2FU1cvx%2FJ0t26dOtuIwv%2Fg%2FktHV8BhsdXjj5jVmMROCDX3ObXahRrJ3NCfePmSyrSVZbAdpwK5dkl5l7a%2B2xVT1ZO68lKnZgsTcen%2FBBfRvttdLws3F3r7XDnxeJfu7nXFH99Bvf%2FAQ%3D%3D
+def calculadora_clasica():
+    operacion = ""
+    cuenta_total = ""
+    print ("\nUsted a seleccionado la calculadora clásica.")
+    resultado = float(input("Ingrese valor inicial: "))
+    cuenta_total = (f"{resultado}")
+    while operacion != "=":
+        operacion = input(f"Tiene el número {resultado}, qué operación desea hacer?\n\nIngrese '+' para sumar,\nIngrese '-' para restar,\nIngrese '/' para dividir,\nIngrese '*' para multiplicar, \nIngrese '=' para obtener el resultado final:\n")
+        if operacion == "+":
+            num = float(input("Ingrese número a sumar:  "))
+            resultado += num
+            cuenta_total += (f" + {num}")
+        if operacion == "-":
+            num = float(input("Ingrese número a restar:  "))
+            resultado -= num
+            cuenta_total += (f" - {num}")
+        if operacion == "/":
+            num = float(input("Ingrese número a dividir:  "))
+            resultado /= num
+            cuenta_total += (f" / {num}")
+        if operacion == "*":
+            num = float(input("Ingrese número a multiplicar:  "))
+            resultado *= num
+            cuenta_total += (f" * {num}")
+    cuenta_total += (f" = {resultado}")
+    print (f"\nUsted a realizado la siguiente cuenta: \n{cuenta_total}\nEl resultado final es: {resultado}.")
+    
+calculadora_clasica()
