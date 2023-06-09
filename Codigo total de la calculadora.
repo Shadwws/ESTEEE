@@ -1,0 +1,57 @@
+#El def "Calculadora_clasica" es un sistemaa de ecuaciones lineales con operaciones como: suma, resta, divisiòn y multilicaciòn. Se pueden incluir nùmeros enteros...
+def calculadora_clasica():
+    operacion = ""
+    cuenta_total = ""
+    #En primera instancia ingreso dos variables.
+    #operacion se usarà para que el usuario ingrese el operando a utilizar.
+    #cuenta_total se usarà con un tema de estetica en el programa, donde mostrarà la cuenta total que se hizo.
+    print ("\nUsted a seleccionado la calculadora clásica.")
+    resultado = float(input("Ingrese valor inicial: "))
+    #Antes de inicar el bucle, se pide un valor inicial que no tendria problema en ser ingresado en la variable "resultado".
+    cuenta_total = (f"{resultado}")
+    while operacion != "=":
+        operacion = input(f"\nUsted cuenta con el siguiente nùmero: {resultado}, qué operación desea hacer?\n\nIngrese '+' para sumar,\nIngrese '-' para restar,\nIngrese '/' para dividir,\nIngrese '*' para multiplicar, \nIngrese '=' para obtener el resultado final:\n")
+        #Si no ingresa ninguna de las 5 salidas posibles, se vuelve a preguntar lo mismo.
+        if operacion == "+":
+            num = float(input("Ingrese número a sumar:  "))
+            resultado += num
+            cuenta_total += (f" + {num}")
+        if operacion == "-":
+            num = float(input("Ingrese número a restar:  "))
+            resultado -= num
+            cuenta_total += (f" - {num}")
+        if operacion == "/":
+            num = float(input("Ingrese número a dividir:  "))
+            resultado /= num
+            cuenta_total += (f" / {num}")
+        if operacion == "*":
+            num = float(input("Ingrese número a multiplicar:  "))
+            resultado *= num
+            cuenta_total += (f" * {num}")
+    cuenta_total += (f" = {resultado}")
+    print (f"\nUsted a realizado la siguiente cuenta: \n{cuenta_total}\nEl resultado final es: {resultado}")
+    
+#def menu_inicial es el menù principal del programa
+def menu_inicial():
+    iniciar = ""
+    cual = 0
+    #La variable iniciar sirve para consultar si dar comienzo al menù principal de la calculadora.
+    #La variable cual sirve para que la persona elija què calculadora utilizar o si desea apagar la calculadora.
+    while iniciar != "on":
+        iniciar  = input("Ingrese 'On' para iniciar calculadora: \n")
+        iniciar = iniciar.lower()
+        #El .lower servirà para un tema de comodidad a la hora de usar el programa. Aunque se ingrese "ON" o "On" o "oN" o "on", el programa igual iniciarà ya que se ingresò la palabra pedida.
+        #Mientras no se ingrese On, el programa seguirà preguntando si desea iniciar la calculadora.
+    print ("\nSe ha iniciado la calculadora.")
+    while cual != 4:
+        cual = int(input("\nMenù de la calculadora:\nIngrese 1 si desea utilizar la calculadora clàsica.\nIngrese 2 si desea utilizar la calculadora de fracciones.\nIngrese 3 si desea utilizar la calculadora de conversiones.\nIngrese 4 si desea apagar la calculadora.\nElija su opciòn: "))
+        #Dependiendo lo que elija el usuario, los harà ingresar al menù de la calculadora correspondiente.
+        if cual == 1:
+            calculadora_clasica()
+        elif cual == 2:
+            menu_de_fracciones()
+        elif cual == 3:
+            menu_de_conversion()
+    print ("\n\nA seleccionado apagar la calculadora. \nMuchas gracias.")
+    #Mensaje de despedida del programa
+menu_inicial()
