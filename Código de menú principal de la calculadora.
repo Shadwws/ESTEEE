@@ -1,0 +1,21 @@
+iniciar = ""
+    cual = 0
+    #La variable iniciar sirve para consultar si dar comienzo al menù principal de la calculadora.
+    #La variable cual sirve para que la persona elija què calculadora utilizar o si desea apagar la calculadora.
+    while iniciar != "on":
+        iniciar  = input("Ingrese 'On' para iniciar calculadora: \n")
+        iniciar = iniciar.lower()
+        #El .lower servirà para un tema de comodidad a la hora de usar el programa. Aunque se ingrese "ON" o "On" o "oN" o "on", el programa igual iniciarà ya que se ingresò la palabra pedida.
+        #Mientras no se ingrese On, el programa seguirà preguntando si desea iniciar la calculadora.
+    print ("\nSe ha iniciado la calculadora.")
+    while cual != 4:
+        cual = int(input("\nMenù de la calculadora:\nIngrese 1 si desea utilizar la calculadora clàsica.\nIngrese 2 si desea utilizar la calculadora de fracciones.\nIngrese 3 si desea utilizar la calculadora de conversiones.\nIngrese 4 si desea apagar la calculadora.\nElija su opciòn: "))
+        #Dependiendo lo que elija el usuario, los harà ingresar al menù de la calculadora correspondiente.
+        if cual == 1:
+            calculadora_clasica()
+        elif cual == 2:
+            menu_de_fracciones()
+        elif cual == 3:
+            menu_de_conversion()
+    print ("\n\nA seleccionado apagar la calculadora. \nMuchas gracias.")
+    #Mensaje de despedida del programa
