@@ -208,7 +208,7 @@ def menu_de_fracciones():
     global l
     while op != "=": 
         while resultadoD == 0: 
-            resultadoN = int(input("Ingrese numerador  \n")) 
+            resultadoN = int(input("\nIngrese numerador  \n")) 
             resultadoD = int(input("Ingrese denominador  \n")) 
         print("Ingrese...") 
         print("+ para sumar") 
@@ -245,7 +245,7 @@ def menu_de_fracciones():
 def menu_de_conversion():
     numero_decimal = -1
     while numero_decimal < 0:
-        numero_decimal = int(input("Ingrese el número que desea convertir (solo enteros positivos):\n"))
+        numero_decimal = int(input("\nIngrese el número que desea convertir (solo enteros positivos):\n"))
     conversión = input("Ingrese el tipo de conversión que desea realizar (Bin, Hex, Oct):\n")
    
     if conversión.lower() == "bin":
