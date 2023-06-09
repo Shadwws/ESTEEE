@@ -1,71 +1,77 @@
 a = 0
 b = 0
-sumaN = 1
-sumaD = 1
-restaN = 1
-restaD = 1
-multiN = 1
-multiD = 1
 op = ""
 l = 0
 resultadoD = 0
-resultadoN = 0
+resultadoN = 1
+num = 1
+den = 0
 
 
 def sumas(num, den):
     global op
-    global sumaD
-    global sumaN
+    global resultadoD
+    global resultadoN
 
     while op != "=":
         den = 0
         while den == 0:
             num = int(input("ingrese numerador"))
             den = int(input("ingrese denominador"))
-        sumaN = num * sumaD + sumaN * den
-        sumaD = sumaD * den
+        resultadoN = num * resultadoD + resultadoN * den
+        resultadoD = resultadoD * den
         op = str(input("Ingrese = para mostrar el resultado, o apriete cualquier cosa para seguir sumando"))
-        resultadoD = sumaD
-        resultadoN = sumaN
+        mcd(resultadoN, resultadoD)
 
 
 def restas(num, den):
-    global restaD
-    global restaN
+    global resultadoD
+    global resultadoN
     global op
     while op != "=":
         den = 0
         while den == 0:
-            num = int(input("ingrese numerador"))
-            den = int(input("ingrese denominador"))
-        restaN = num * restaD - restaN * den
-        restaD = restaD * den
+            num = int(input("ingrese numerador \n"))
+            den = int(input("ingrese denominador \n"))
+        resultadoN = num * resultadoD - resultadoN * den
+        resultadoD = resultadoD * den
         op = str(input("Ingrese = para mostrar el resultado, o apriete cualquier cosa para seguir sumando"))
-
-
+        mcd(resultadoN, resultadoD)
 
 
 def dym(num, den):
     den = 0
-    global multiD
-    global multiN
-    while den == 0:
-        num = int(input("ingrese numerador"))
-        den = int(input("ingrese denominador"))
-    multiN = multiN * num
-    multiD = multiD * den
+    global op
+    global resultadoD
+    global resultadoN
 
-    op = str(input("desea salir Y/N"))
-    if op.lower() == "y":
-        op = "="
+    while op != "=":
+        while den == 0:
+            num = int(input("ingrese numerador \n"))
+            den = int(input("ingrese denominador \n"))
+        if l == 1:
+            a = num
+            b = den
+            num = b
+            den = a
+            resultadoN = resultadoN * num
+            resultadoD = resultadoD * den
+        else:
+            resultadoN = resultadoN * num
+            resultadoD = resultadoD * den
+
+        op = str(input("desea salir Y/N"))
+        if op.lower() == "y":
+            op = "="
+    mcd(resultadoN, resultadoD)
 
 
 def mcd(resultadoN, resultadoD):
     c = 1
     if resultadoN > resultadoD:
-        f = resultadoN
+        f = resultadoN + 1
     else:
-        f = resultadoD
+        f = resultadoD + 1
     while c != 0:
         f = f - 1
         d = resultadoN % f
@@ -73,13 +79,18 @@ def mcd(resultadoN, resultadoD):
         if d == 0 and e == 0:
             c = 0
 
-    resultadoD = resultadoD / f
-    resultadoN = resultadoN / f
-    print(f"{resultadoN} / {resultadoD}")
-
+    resultadoD = resultadoD // f
+    resultadoN = resultadoN // f
+    alpha = resultadoN / resultadoD
+    print(f"El resultado en fracciones es {resultadoN} / {resultadoD}")
+    print(f"El resultado en decimales es {alpha} ")
 
 
 while op != "=":
+    while resultadoD == 0:
+        resultadoN = int(input("ingrese numerador"))
+        resultadoD = int(input("ingrese denominador"))
+
     print("ingrese:")
     print("+ para sumar")
     print("- para restar")
@@ -88,33 +99,21 @@ while op != "=":
     op = str(input(""))
 
     if op == "+":
-        sumas(resultadoN, resultadoD)
+        sumas(0, 0)
 
 
     elif op == "-":
         restas(0, 0)
-        resultadoN = restaN
-        resultadoD = restaD
+
 
     elif op == "/":
-        op = "x"
+        op = "*"
         l = 1
 
-    elif op == "*":
-        if l == 1:
-            a = num
-            b = den
-            num = b
-            den = a
-            dym(0, 0)
-            resultadoN = multiN
-            resultadoD = multiD
-        else:
-            dym(0, 0)
-            resultadoN = multiN
-            resultadoD = multiD
+    if op == "*":
+        dym(0, 0)
+
 
     elif op != "=":
         print("valor erroneo, intentar de nuevo")
 
-mcd(0, 0)
