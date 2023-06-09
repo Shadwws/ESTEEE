@@ -274,7 +274,7 @@ try:
         #Mientras no se ingrese On, el programa seguirá preguntando si desea iniciar la calculadora. 
     print ("\nSe ha iniciado la calculadora. ¡Bienvenido!") 
     while cual != 4: 
-        print("Seleccione una opción:")
+        print("\nSeleccione una opción:")
         print("1: Calculadora clásica")
         print("2: Calculadora de fracciones")
         print("3: Conversión numérica")
