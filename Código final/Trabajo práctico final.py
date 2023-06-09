@@ -267,38 +267,41 @@ def menu_de_conversion():
 iniciar = "" 
 cual = 0 
 #La variable cual sirve para que la persona elija qué calculadora utilizar o si desea apagar la calculadora. 
-while iniciar != "on": 
-    iniciar  = input("Ingrese 'On' para iniciar calculadora: \n") 
-    iniciar = iniciar.lower() 
-     #Mientras no se ingrese On, el programa seguirá preguntando si desea iniciar la calculadora. 
-print ("\nSe ha iniciado la calculadora. ¡Bienvenido!") 
-while cual != 4: 
-    print("Seleccione una opción:")
-    print("1: Calculadora clásica")
-    print("2: Calculadora de fracciones")
-    print("3: Conversión numérica")
-    print("4: Salir")
-    cual = int(input())
-    if cual == 1: 
-        try:
-            calculadora_clasica() 
-        except ZeroDivisionError:
-            print ("\nNo se puede dividir por 0")
-        except ValueError:
-            print ("\nValor inválido")
-    elif cual == 2: 
-        try:
-            menu_de_fracciones() 
-        except ValueError:
-            print("\nSolo pueden seleccionarse números enteros")
-    elif cual == 3: 
-        try:
-            menu_de_conversion() 
-        except ValueError:
-            print("\nSolo acepta números enteros")
-            
-print("\n\nHa seleccionado apagar la calculadora. \nMuchas gracias.") 
+try:
+    while iniciar != "on": 
+        iniciar  = input("Ingrese 'On' para iniciar calculadora: \n") 
+        iniciar = iniciar.lower() 
+        #Mientras no se ingrese On, el programa seguirá preguntando si desea iniciar la calculadora. 
+    print ("\nSe ha iniciado la calculadora. ¡Bienvenido!") 
+    while cual != 4: 
+        print("Seleccione una opción:")
+        print("1: Calculadora clásica")
+        print("2: Calculadora de fracciones")
+        print("3: Conversión numérica")
+        print("4: Salir")
+        cual = int(input())
+        if cual == 1: 
+            try:
+                calculadora_clasica() 
+            except ZeroDivisionError:
+                print ("\nNo se puede dividir por 0")
+            except ValueError:
+                print ("\nValor inválido")
+        elif cual == 2: 
+            try:
+                menu_de_fracciones() 
+            except ValueError:
+                print("\nSolo pueden seleccionarse números enteros")
+        elif cual == 3: 
+            try:
+                menu_de_conversion() 
+            except ValueError:
+                print("\nSolo acepta números enteros")
+                
+    print("\n\nHa seleccionado apagar la calculadora. \nMuchas gracias.") 
+except ValueError:
+    print("Opción inválida")
 
-
+      
 # Sandy Pérez, Martín Aburto, Emmanuel Bertín
 
